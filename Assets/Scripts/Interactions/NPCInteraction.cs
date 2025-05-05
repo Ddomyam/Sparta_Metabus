@@ -49,10 +49,6 @@ public class NPCInteraction : BaseInteraction
                 }
             }
         }
-
-        
-
-        //SceneManager.LoadScene("MinigameScene");
     }
 
     public override void HideInteractionPrompt()

@@ -1,18 +1,22 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
-public class MinigameInteraction : MonoBehaviour
+public class MinigameInteraction : BaseInteraction
 {
-    // Start is called before the first frame update
-    void Start()
+    public SpriteRenderer currentSprite;
+    public Sprite newSprite;
+    public override void Interact()
     {
-        
+        currentSprite.sprite = newSprite;
+        Invoke("LoadScene", 1f);
+
     }
 
-    // Update is called once per frame
-    void Update()
+    private void LoadScene()
     {
-        
+        SceneManager.LoadScene("MinigameScene");
+
     }
 }
