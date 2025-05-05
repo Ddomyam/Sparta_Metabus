@@ -6,7 +6,7 @@ using UnityEngine;
 public class BaseInteraction : MonoBehaviour
 {
     //상호작용 가능한 거리
-    protected float interactionDistance = 1f;
+    protected float interactionDistance = 1.5f;
     public float InteractionDistance { get { return interactionDistance; } }
 
     //근처에 있는지 여부 판단
@@ -17,10 +17,6 @@ public class BaseInteraction : MonoBehaviour
     public Transform player;
     public GameObject interactionUI;
 
-    protected virtual void Awake()
-    {
-          
-    }
 
     protected virtual void Update()
     {
@@ -59,7 +55,7 @@ public class BaseInteraction : MonoBehaviour
             interactionUI.SetActive(true);
     }
 
-    void HideInteractionPrompt()
+    public virtual void HideInteractionPrompt()
     {
         Debug.Log("Interaction prompt hidden.");
         if (interactionUI != null)
