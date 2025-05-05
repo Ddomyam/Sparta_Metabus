@@ -66,7 +66,7 @@ public class BaseInteraction : MonoBehaviour
             interactionUI.SetActive(false);
     }
 
-    void Interact()
+    public virtual void Interact()
     {
         Debug.Log("상호작용 중!");
     }

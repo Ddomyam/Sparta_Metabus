@@ -18,6 +18,7 @@ public class GameManager : MonoBehaviour
     {
         gameManager = this;
         uiManager = FindObjectOfType<UIManager>();
+        //PlayerPrefs.DeleteKey(uiManager.BestScorekey);
     }
     private void Start()
     {
@@ -32,7 +33,7 @@ public class GameManager : MonoBehaviour
 
     public void RestartGame()
     {
-        //SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
     public void AddScore(int score)
