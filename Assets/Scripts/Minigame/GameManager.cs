@@ -30,6 +30,11 @@ public class GameManager : MonoBehaviour
         Debug.Log("Game Over");
         uiManager.SetRestart();
     }
+    
+    public void QuitGame()
+    {
+        SceneManager.LoadScene("MainScene");
+    }
 
     public void RestartGame()
     {

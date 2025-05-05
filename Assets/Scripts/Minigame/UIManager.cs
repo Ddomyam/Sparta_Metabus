@@ -8,6 +8,7 @@ public class UIManager : MonoBehaviour
     public TextMeshProUGUI scoreText;
     public TextMeshProUGUI bestScoreText;
     public TextMeshProUGUI restartText;
+    public TextMeshProUGUI quitText;
 
     int bestScore = 0;
     private const string BestScoreKey = "BestScore";
@@ -20,13 +21,14 @@ public class UIManager : MonoBehaviour
             Debug.LogError("");
 
         if (restartText == null)
+            Debug.LogError("");     
+        
+        if (quitText == null)
             Debug.LogError("");
 
         restartText.gameObject.SetActive(false);
-//#if UNITY_EDITOR
-//        // 유니티 에디터에서만 초기화
-//        PlayerPrefs.DeleteKey(BestScoreKey);
-//#endif
+        quitText.gameObject.SetActive(false);
+
         bestScore = PlayerPrefs.GetInt(BestScoreKey, 0);
         bestScoreText.text = bestScore.ToString();
     }
@@ -34,6 +36,7 @@ public class UIManager : MonoBehaviour
     public void SetRestart()
     {
         restartText.gameObject.SetActive(true);
+        quitText.gameObject.SetActive(true);
     }
 
 

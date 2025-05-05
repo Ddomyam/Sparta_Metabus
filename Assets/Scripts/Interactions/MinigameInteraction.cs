@@ -7,6 +7,11 @@ public class MinigameInteraction : BaseInteraction
 {
     public SpriteRenderer currentSprite;
     public Sprite newSprite;
+
+    private void Start()
+    {
+
+    }
     public override void Interact()
     {
         currentSprite.sprite = newSprite;
@@ -17,6 +22,5 @@ public class MinigameInteraction : BaseInteraction
     private void LoadScene()
     {
         SceneManager.LoadScene("MinigameScene");
-
     }
 }

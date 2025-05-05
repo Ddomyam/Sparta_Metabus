@@ -16,6 +16,8 @@ public class ResourceController : MonoBehaviour
     public float CurrentHealth { get; private set; }
     public float MaxHealth => statHandler.Health;
 
+    public int coin = 0;
+
     private void Awake()
     {
         baseController = GetComponent<BaseController>();

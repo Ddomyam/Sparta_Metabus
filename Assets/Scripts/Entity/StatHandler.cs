@@ -18,4 +18,11 @@ public class StatHandler : MonoBehaviour
         get => speed;
         set => speed = Mathf.Clamp(value, 0, 20);
     }
+
+    [Range(1, 20)][SerializeField] private int coin = 0;
+    public int Coin
+    {
+        get => coin;
+        set => coin = Mathf.Clamp(value, 0, 20);
+    }
 }
