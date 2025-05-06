@@ -5,7 +5,6 @@ using UnityEngine;
 
 public class Coins : MonoBehaviour
 {
-    private int coins;
 
     public CoinUI coinUI;
 
@@ -13,9 +12,7 @@ public class Coins : MonoBehaviour
     {
         if(collision.CompareTag("Player"))
         {
-            coins++;
-            coinUI.CoinUiUpdate(coins);
-
+            coinUI.UpdateCoinNums(1);
             Destroy(gameObject);
         }
     }

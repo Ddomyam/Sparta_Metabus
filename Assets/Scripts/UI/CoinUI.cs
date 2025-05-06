@@ -6,6 +6,13 @@ using UnityEngine;
 public class CoinUI : MonoBehaviour
 {
     public TextMeshProUGUI coinText;
+    int coins;
+
+    public void UpdateCoinNums(int nums)
+    {
+        coins += nums;
+        CoinUiUpdate(coins);
+    }
 
     public void CoinUiUpdate(int coins)
     {

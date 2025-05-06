@@ -13,6 +13,7 @@ public class UIManager : MonoBehaviour
     int bestScore = 0;
     private const string BestScoreKey = "BestScore";
 
+    public CoinUI CoinObjects;
 
     // Start is called before the first frame update
     void Start()
@@ -48,6 +49,10 @@ public class UIManager : MonoBehaviour
             bestScore = score;
             bestScoreText.text = bestScore.ToString();
             PlayerPrefs.SetInt(BestScoreKey, bestScore);
+            if(bestScore >= 7)
+            {
+                CoinObjects.UpdateCoinNums(7);
+            }
         }
     }
 }
